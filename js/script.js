@@ -39,7 +39,7 @@
       optTitleListSelector = '.titles',
       optArticleTagsSelector = '.post-tags .list';
 
-  function generateTitleLinks (){
+  function generateTitleLinks(customSelector = ''){
 
     /* [DONE] remove contents of titleList */
     const titleList = document.querySelector(optTitleListSelector);
@@ -47,7 +47,7 @@
     titleList.innerHTML = '';   
   
     /* [DONE] for each article */
-    const articles = document.querySelectorAll(optArticleSelector);
+    const articles = document.querySelectorAll(optArticleSelector + customSelector);
 
     let html = '';
     
@@ -106,7 +106,7 @@
         for(let tag of articleTagsArray){
           console.log(tag);
           /* generate HTML of the link */
-          const linkHTML = '<li><a href="#tag-' + articleTags + '"><span>' + tag + '</span></a></li>';
+          const linkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
           console.log(linkHTML);      
           /* add generated code to html variable */
          html = html + linkHTML;
@@ -144,10 +144,9 @@
         /* END LOOP: for each active tag link */
       } 
     /* find all tag links with "href" attribute equal to the "href" constant */
-      document.querySelectorAll('a[href="' + href + '"]');
+      const tagsLinksChange = document.querySelectorAll('a[href="' + href + '"]');
     /* START LOOP: for each found tag link */
-      for(let tagLink of tagLinks){
-        console.log(tagLink);
+      for(let tagLink of tagsLinksChange){
         /* add class active */
         tagLink.classList.add('active');    
         /* END LOOP: for each found tag link */
@@ -158,12 +157,15 @@
   
   function addClickListenersToTags(){
     /* find all links to tags */
-  
+    const tagsLinks = document.querySelectorAll('a[href^="#tag-"]');
     /* START LOOP: for each link */
-  
+    for(let tagLink of tagsLinks){
+      console.log(tagLink);
       /* add tagClickHandler as event listener for that link */
-  
-    /* END LOOP: for each link */
+        tagLink.addEventListener('click', tagClickHandler);
+      /* END LOOP: for each link */
+      }
   }
   
   addClickListenersToTags();
+
