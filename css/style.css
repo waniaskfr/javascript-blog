@@ -86,6 +86,23 @@ body {
   margin-bottom: 12px;
 }
 
+/* Tags */
+.list.tags li {
+  display: inline-block;
+}
+
+a.tag-size-1, .tag-size-2 {
+  font-size: 12px;
+}
+
+a.tag-size-3, .tag-size-4 {
+  font-size: 18px;
+}
+
+a.tag-size-5 {
+  font-size: 22px;
+}
+
 /* Post */
 .post {
   display: none;
