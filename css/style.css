@@ -116,6 +116,10 @@ a.tag-size-5 {
   font-style: italic;
 }
 
+.post-author li {
+  list-style-type: none;
+}
+
 .post-tags {
   display: -ms-flexbox;
   display: flex;
