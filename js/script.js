@@ -73,8 +73,8 @@ const templates = {
   
       /* get the title from the title element */
       /* create HTML of the link */
-     // const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
-     // console.log(linkHTML);
+      //const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+      //console.log(linkHTML);
       /* template link */
       const linkHTMLData = {id: articleId, title: articleTitle};
       const linkHTML = templates.articleLink(linkHTMLData);
@@ -315,7 +315,7 @@ const templates = {
       const author = href.replace('#author-', '');
       console.log(author);
       /* find all author links with class active */
-      const authorLinks = document.querySelectorAll('.post-author a.active');
+      const authorLinks = document.querySelectorAll('.authors a.active');
       /* START LOOP: for each active author link */
       for(let authorLink of authorLinks){
         console.log(authorLink);
