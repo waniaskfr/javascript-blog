@@ -73,8 +73,8 @@ const templates = {
   
       /* get the title from the title element */
       /* create HTML of the link */
-      //const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
-      //console.log(linkHTML);
+     // const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+     // console.log(linkHTML);
       /* template link */
       const linkHTMLData = {id: articleId, title: articleTitle};
       const linkHTML = templates.articleLink(linkHTMLData);
